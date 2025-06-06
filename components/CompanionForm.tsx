@@ -18,6 +18,8 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrig
 import { fi } from 'zod/v4/locales'
 import { subjects, voices } from '@/constants'
 import { Textarea } from './ui/textarea'
+import { createCompanion } from '@/lib/actions/companion.actions'
+import { redirect } from 'next/navigation'
 
 
 const formSchema = z.object({
@@ -44,10 +46,18 @@ duration: 15
   })
  
   // 2. Define a submit handler.
-  const onSubmit = (values: z.infer<typeof formSchema>) =>{
+  const onSubmit = async (values: z.infer<typeof formSchema>) =>{
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values)
+    const companion = await createCompanion(values);
+    if(companion) {
+      redirect(`/companions/${companion.id}`);
+    } else {
+      alert('Failed to create companion. Please try again.');
+    }
+    // form.reset();
+    // alert('Companion created successfully!');
   }
   return (
     <Form {...form}>
