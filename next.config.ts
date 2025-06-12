@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  // give permission to use the clerk.com domain for images
+ images: {
+  remotePatterns: [
+    {hostname: 'img.clerk.com'}
+  ]
+ }
 };
 
 export default nextConfig;
