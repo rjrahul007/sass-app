@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Lottie, { LottieRefCurrentProps } from 'lottie-react'
 import soundwaves from '@/constants/soundwaves.json'
 import { set } from 'zod/v4'
+import { addToSessionHistory } from '@/lib/actions/companion.actions'
 
 // use enum to make the state strongly typed, readable, and maintainable, If you try to set an invalid status like "waiting" — TypeScript will throw an error., You get suggestions in your editor — no typos like 'FINSHED' instead of 'FINISHED'.
 
@@ -37,7 +38,10 @@ useEffect(() => {
 useEffect(() => {
     const onCallStart = () => setcallStatus(CallStatus.ACTIVE)
     
-    const onCallEnd = () => setcallStatus(CallStatus.FINISHED)
+    const onCallEnd = () => {
+        setcallStatus(CallStatus.FINISHED)
+        addToSessionHistory(companionId)
+    }
 
     const onMessage = (message: Message) => {
         if(message.type === 'transcript' && message.transcriptType==='final') {
@@ -128,7 +132,7 @@ const handleDisconnect = async () => {
                         {isMuted ? 'Turn on microphone' : 'Turn off microphone'}
                     </p>
                 </button>
-                <button className={cn('rounded-lg py-2 cursor-pointer transition-colors w-full text-white', callStatus === CallStatus.ACTIVE ? 'bg-red-700 hover:bg-red-900' : 'bg-primary', callStatus === CallStatus.CONNECTING && 'cursor-not-allowed opacity-50 animate-pulse')} onClick={callStatus === CallStatus.ACTIVE ? handleDisconnect : handleConnect} disabled={callStatus !== CallStatus.CONNECTING}>
+                <button className={cn('rounded-lg py-2 cursor-pointer transition-colors w-full text-white', callStatus === CallStatus.ACTIVE ? 'bg-red-700 hover:bg-red-900' : 'bg-primary', callStatus === CallStatus.CONNECTING && 'cursor-not-allowed opacity-50 animate-pulse')} onClick={callStatus === CallStatus.ACTIVE ? handleDisconnect : handleConnect}>
                      {callStatus === CallStatus.ACTIVE
                         ? "End Session"
                         : callStatus === CallStatus.CONNECTING
