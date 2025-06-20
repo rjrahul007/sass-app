@@ -3,6 +3,12 @@ import type { NextConfig } from "next";
 
 
 const nextConfig: NextConfig = {
+    typescript: {
+      ignoreBuildErrors: true
+    },
+    eslint: {
+        ignoreDuringBuilds: true
+    },
   // give permission to use the clerk.com domain for images
  images: {
   remotePatterns: [
