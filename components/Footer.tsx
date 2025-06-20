@@ -44,9 +44,9 @@ const Footer = () => {
         {/* Social Media */}
         <div>
           <div className="mt-4 flex space-x-4">
-            <a href="#" className="hover:text-white"><Github size={20} /></a>
-            <a href="#" className="hover:text-white"><Linkedin size={20} /></a>
-            <a href="#" className="hover:text-white"><Instagram size={20} /></a>
+            <a href="https://github.com/rjrahul007" className="hover:text-white"><Github size={20} /></a>
+            <a href="https://linkedin.com/in/rjrahool007" className="hover:text-white"><Linkedin size={20} /></a>
+            <a href="https://www.instagram.com/rjrahool007/" className="hover:text-white"><Instagram size={20} /></a>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@ const Footer = () => {
       <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} Converso. All rights reserved.
         <br />
-        <span className='text-xs'> Made with ❤️ by <a href="" className="text-white hover:text-gray-400 transition-colors">RJ</a></span>
+        <span className='text-xs'> Made with ❤️ by <a href="https://github.com/rjrahul007" className="text-white hover:text-gray-400 transition-colors">RJ</a></span>
       </div>
     </footer>
   )
