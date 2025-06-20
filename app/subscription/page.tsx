@@ -3,9 +3,9 @@ import React from 'react'
 
 const Subscripton = () => {
   return (
-    <div>
+    <main>
       <PricingTable/>
-    </div>
+    </main>
   )
 }
 

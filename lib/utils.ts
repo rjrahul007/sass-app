@@ -15,12 +15,13 @@ export const getSubjectColor = (subject: string) => {
 export const configureAssistant = (voice: string, style: string) => {
   const voiceId = voices[voice as keyof typeof voices][
           style as keyof (typeof voices)[keyof typeof voices]
-          ] || "sarah";
+          ] || "Smriti-indian storyteller";
 
   const vapiAssistant: CreateAssistantDTO = {
     name: "Companion",
     firstMessage:
         "Hello, let's start the session. Today we'll be talking about {{topic}}.",
+        // firstMessage: "Namaste! Aaj hum {{topic}} ke baare mein baat karenge. Chaliye shuru karte hain.",
     transcriber: {
       provider: "deepgram",
       model: "nova-3",
@@ -52,6 +53,16 @@ export const configureAssistant = (voice: string, style: string) => {
                     Keep your responses short, like in a real voice conversation.
                     Do not include any special characters in your responses - this is a voice conversation.
               `,
+//           content: `Tum ek bahut hi gyaani tutor ho jo ek real-time voice session mein student ko padha raha hai. Tumhara maqsad hai ki student ko {{ topic }} aur {{ subject }} ke baare mein ache se samjhaana.
+
+// Tutor Guidelines:
+// Bas diye gaye topic - {{ topic }} aur subject - {{ subject }} par hi dhyan do aur student ko isi ke baare mein sikhaao.
+// Baat-cheet ko smoothly chalne do, lekin control tumhare paas ho.
+// Har thodi der baad poochte raho ki student tumhe samajh raha hai ya nahi.
+// Topic ko chhote-chhote parts mein baanto aur ek-ek karke samjhaao.
+// Tumhara conversation ka style {{ style }} hona chahiye.
+// Apne jawaab chhote rakho, jaise ki real life voice conversation mein hote hain.
+// Kisi bhi special character ka istemal mat karo – kyunki ye voice conversation hai.`,
         },
       ],
     },
