@@ -16,10 +16,20 @@ export const subjectsColors = {
   economics: "#C8FFDF",
 };
 
+
+// male - aduJlSmEKqbhRQAAMzV2, RnauXKDOkyVg9FjwISwR, FmBhnvP58BK0vz65OOj7, 
+// Priyam-deep documentary jNoQBSsAUV0DpAYKDl4u
+//Harshit - (Hinenglish) 6TcvxMZXgg9AlJrd8iCl
+// female - FFmp1h1BMl0iVHA0JxrI, 1qEiC6qsybMkmnNdVMbK, kiaJRdXJzloFWi6AtFBf, QqEyzxMT9wDdB6RRVAbT
 export const voices = {
-  male: { casual: "2BJW5coyhAzSr8STdHbE", formal: "c6SfcYrb2t09NHXiT80T" },
-  female: { casual: "ZIlrSGI4jZqobxRKprJz", formal: "sarah" },
+  male: { casual: "6TcvxMZXgg9AlJrd8iCl", formal: "xnx6sPTtvU635ocDt2j7" },
+  female: { casual: "2zRM7PkgwBPiau2jvVXc", formal: "90ipbRoKi4CpHXvKVtl0" },
 };
+
+// export const voices = {
+//   male: { casual: "2BJW5coyhAzSr8STdHbE", formal: "c6SfcYrb2t09NHXiT80T" },
+//   female: { casual: "ZIlrSGI4jZqobxRKprJz", formal: "sarah" },
+// };
 
 export const recentSessions = [
   {

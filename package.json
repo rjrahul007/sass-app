@@ -23,7 +23,11 @@
     "clsx": "^2.1.1",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.511.0",
+<<<<<<< HEAD
     "next": "15.3.8",
+=======
+    "next": "^15.5.12",
+>>>>>>> bb47e80 (Update Supabase connection and fix duplicate IDs in getRecentSessions)
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.56.4",
