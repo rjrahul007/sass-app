@@ -34,7 +34,10 @@ const CompanionsList = ({
         </TableHeader>
         <TableBody>
           {companions?.map(({ id, subject, name, topic, duration }) => (
-            <TableRow key={id} className="hover:bg-gray-100 transition-colors">
+            <TableRow
+              key={id}
+              className="hover:bg-gray-100 transition-colors duration-300 cursor-pointer"
+            >
               <TableCell>
                 <Link href={`/companions/${id}`}>
                   <div className="flex items-center gap-2">
